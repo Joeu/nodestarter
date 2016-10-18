@@ -1,0 +1,11 @@
+<!-- Sidenav -->
+<div ng-cloak>
+    <md-sidenav class="md-sidenav-left" md-component-id="left" md-disable-backdrop md-whiteframe="4">
+        <md-list>
+            <md-list-item ng-repeat="action in actions">
+                <md-button ui-sref="{{action.state}}">{{action.name}}</md-button>
+            </md-list-item>
+        </md-list>
+    </md-sidenav>
+</div>
+<!-- /Sidenav -->

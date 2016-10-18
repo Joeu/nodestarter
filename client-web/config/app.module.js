@@ -1,0 +1,1 @@
+angular.module('nodestarter', ['ui.router', 'ngMaterial'])

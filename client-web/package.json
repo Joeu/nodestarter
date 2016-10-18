@@ -1,0 +1,23 @@
+{
+  "name": "nodestarter-web",
+  "version": "0.0.1",
+  "description": "",
+  "private": true,
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "http://150.165.11.137:81/lab-users/kaizen.git"
+  },
+  "author": "Joeu",
+  "license": "ISC",
+  "dependencies": {
+    "angular": "^1.5.8",
+    "angular-animate": "^1.5.8",
+    "angular-aria": "^1.5.8",
+    "angular-material": "^1.1.1",
+    "angular-ui-router": "^0.3.1",
+    "material-design-icons": "^3.0.1"
+  }
+}
