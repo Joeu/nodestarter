@@ -1,16 +1,15 @@
-angular.module('getinline').controller('homeController', function ($scope, $timeout, $mdSidenav) {
-    $scope.title = "Node Starter";
+angular.module('nodestarter').controller('homeController', function ($scope, $timeout, $mdSidenav) {
 
-    $scope.title = "NodeStarter";
+    $scope.title = "Node Starter";
 
     $scope.actions = [
         {
-            name: 'Establishments',
-            state: 'establishments'
+            name: 'Component1',
+            state: 'comp1'
         },
         {
-            name: 'Clients',
-            state: 'clients'
+            name: 'Component2',
+            state: 'comp2'
         }
     ];
 

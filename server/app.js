@@ -31,7 +31,6 @@ app.use(flash());
 app.use(express.static('../client-web/assets'));
 app.use(express.static('../client-web/node_modules'));
 app.use(express.static('../client-web/'));
-// app.use(express.static('../client-web/bower_components'));
 
 app.use('/',  routes);
 

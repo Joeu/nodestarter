@@ -1,4 +1,4 @@
-angular.module('getinline').config(function($stateProvider, $urlRouterProvider) {
+angular.module('nodestarter').config(function($stateProvider, $urlRouterProvider) {
 
     $urlRouterProvider.otherwise('/');
 
@@ -10,16 +10,16 @@ angular.module('getinline').config(function($stateProvider, $urlRouterProvider) 
         controller: 'homeController'
     })
 
-    .state('establishments', {
+    .state('comp1', {
         url: '/',
-        templateUrl: '../components/establishment/establishment.html',
-        controller: 'establishmentController as estCtrl'
+        templateUrl: '../components/component1/component1.html',
+        controller: 'component1controller as c1Ctrl'
     })
 
-    .state('clients', {
+    .state('comp2', {
         url: '/',
-        templateUrl: '../components/client/client.html',
-        controller: 'clientController as cliCtrl'
+        templateUrl: '../components/component2/component2.html',
+        controller: 'component2controller as c2Ctrl'
     })
 
 

@@ -1,6 +1,5 @@
-angular.module('getinline').controller('indexController', function ($scope, $mdSidenav) {
+angular.module('nodestarter').controller('indexController', function ($scope, $mdSidenav) {
     $scope.toggleLeft = buildToggler('left');
-    // $scope.toggleRight = buildToggler('right');
 
     $scope.title = "NodeStarter";
 
@@ -13,7 +12,7 @@ angular.module('getinline').controller('indexController', function ($scope, $mdS
     $scope.actions = [
         {
             name: 'About',
-            state: 'home.about'
+            state: 'home'
         }
     ];
 

@@ -1,3 +1,3 @@
-angular.module('getinline').config(function ($mdThemingProvider) {
+angular.module('nodestarter').config(function ($mdThemingProvider) {
     $mdThemingProvider.theme('dark-grey').backgroundPalette('grey').dark();
 });

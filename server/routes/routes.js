@@ -2,7 +2,7 @@ var express = require('express');
 var router = express.Router();
 
 router.use('/', require('./index'));
-router.use('/client', require('./client.routes'));
-router.use('/establishment', require('./establishment.routes'));
+router.use('/component1', require('./component1.routes.js'));
+router.use('/component2', require('./component2.routes.js'));
 
 module.exports = router;
