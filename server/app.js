@@ -12,7 +12,7 @@ var app = express();
 
 var server = require('http').Server(app);
 
-var routes = require('./routes/routes.js');
+var routes = require('../server/routes/routes');
 
 // client setup
 app.set('views', '../client-web/');
@@ -67,18 +67,18 @@ app.use(function(err, req, res, next) {
 });
 
 // Connect to the db
-mongoose.connect('mongodb://localhost:27017/nodestarter', function(err, db) {
-    if(err) {
-        res.status(err.status || 500);
-        res.render('error', {
-            message: err.message,
-            error: err
-        });
-    } else {
-        console.log("nodestarter connected");
-        //mongoose.connection.db.dropDatabase();
-    }
-});
+// mongoose.connect('mongodb://localhost:27017/nodestarter', function(err, db) {
+//     if(err) {
+//         res.status(err.status || 500);
+//         res.render('error', {
+//             message: err.message,
+//             error: err
+//         });
+//     } else {
+//         console.log("nodestarter connected");
+//         //mongoose.connection.db.dropDatabase();
+//     }
+// });
 
 // app.all('*', function(req, res, next) {
 //     res.header("Access-Control-Allow-Origin", "*");

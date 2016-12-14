@@ -1,1 +1,1 @@
-angular.module('nodestarter', ['ui.router', 'ngMaterial'])
+angular.module('getinline', ['ui.router', 'ngMaterial'])

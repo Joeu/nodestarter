@@ -1,6 +1,6 @@
-angular.module('nodestarter').controller('indexController', function ($scope, $mdSidenav) {
+angular.module('getinline').controller('indexController', function ($scope, $mdSidenav) {
     $scope.toggleLeft = buildToggler('left');
-    $scope.toggleRight = buildToggler('right');
+    // $scope.toggleRight = buildToggler('right');
 
     $scope.title = "NodeStarter";
 
