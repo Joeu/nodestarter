@@ -67,7 +67,7 @@ app.use(function(err, req, res, next) {
 
 // Connect to the db
 var mongoose = require('mongoose');
-var connectionString = 'mongodb://admin:admin@ds019482.mlab.com:19482/getinline';
+var connectionString = 'mongodb://admin:admin@ds133378.mlab.com:33378/nodestarter';
 mongoose.connect(connectionString, function (err, db) {
     if (err){
         console.log(err);
