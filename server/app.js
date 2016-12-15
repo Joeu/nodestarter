@@ -66,6 +66,16 @@ app.use(function(err, req, res, next) {
 });
 
 // Connect to the db
+var mongoose = require('mongoose');
+var connectionString = 'mongodb://admin:admin@ds019482.mlab.com:19482/getinline';
+mongoose.connect(connectionString, function (err, db) {
+    if (err){
+        console.log(err);
+    }else{
+        console.log("Connectec to mlab");
+    }
+});
+
 // mongoose.connect('mongodb://localhost:27017/nodestarter', function(err, db) {
 //     if(err) {
 //         res.status(err.status || 500);
