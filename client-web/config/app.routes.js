@@ -10,14 +10,20 @@ angular.module('nodestarter').config(function($stateProvider, $urlRouterProvider
         controller: 'homeController'
     })
 
+    .state('compMng', {
+        url: '/components',
+        templateUrl: '../components/componentsManager/componentsMng.html',
+        controller: 'componentMngController as cMngCtrl'
+    })
+
     .state('comp1', {
-        url: '/',
+        url: '/component1',
         templateUrl: '../components/component1/component1.html',
         controller: 'component1controller as c1Ctrl'
     })
 
     .state('comp2', {
-        url: '/',
+        url: '/component2',
         templateUrl: '../components/component2/component2.html',
         controller: 'component2controller as c2Ctrl'
     })

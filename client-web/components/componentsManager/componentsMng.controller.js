@@ -2,17 +2,21 @@
 
 angular
     .module('nodestarter')
-    .controller('component1controller', component1controller);
+    .controller('componentMngController', componentMngController);
 
-function component1controller($scope, component1service) {
+function componentMngController($scope, componentsService) {
     var vm = this;
 
-    vm.title = "Component 1";
+    vm.title = "Components Manager";
+    $scope.$parent.title = vm.title;
+
     vm.items = [];
+
     vm.getItems = getItems;
 
     function getItems() {
         function success(res) {
+            console.log(res.data);
             vm.items = res.data;
         }
 
@@ -20,10 +24,14 @@ function component1controller($scope, component1service) {
             console.log(err);
         }
 
-        component1service.getItems().then(success, error);
+        componentsService.getItems().then(success, error);
     }
 
     $scope.actions = [
+        {
+            name: 'Component 1',
+            state: 'comp1'
+        },
         {
             name: 'Component 2',
             state: 'comp2'

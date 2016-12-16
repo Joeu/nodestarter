@@ -1,4 +1,14 @@
 <div ng-include="'components/shared/sidenav/sidenav.html'"></div>
-<md-content layout="row" style="height: inherit" layout-align="center center">
+<md-content layout="column" style="height: inherit" layout-align="center center">
     <p ng-bind="c2Ctrl.title"></p>
+
+    <md-button ng-click="c2Ctrl.getItems();">Retrieve Items</md-button>
+
+    <md-content layout="column">
+        <md-list-item ng-repeat="item in c2Ctrl.items">
+            <p>id: {{ item._id }} |</p>
+            <p> name: {{ item.name }}</p>
+        </md-list-item>
+    </md-content>
+
 </md-content>
