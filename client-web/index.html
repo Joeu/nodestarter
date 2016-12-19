@@ -8,46 +8,60 @@
 </head>
 <body ng-controller="indexController">
 
-    <!--  Toolbar  -->
-    <md-toolbar class="md-hue-2" role="toolbar">
-        <div class="md-toolbar-tools">
-            <md-button class="md-icon-button" ng-click="toggleLeft()">
-                <md-icon>menu</md-icon>
-            </md-button>
+<script src="/angular/angular.js"></script>
 
-            <p>{{ title }}</p>
-        </div>
-    </md-toolbar>
+
+<!--Angular Libraries-->
+<div layout="column" layout-fill>
+    <!--  Toolbar  -->
+    <header>
+        <md-toolbar class="md-hue-2" role="toolbar">
+            <div class="md-toolbar-tools">
+                <md-button class="md-icon-button" ng-click="toggleLeft()">
+                    <md-icon>menu</md-icon>
+                </md-button>
+                <p>{{ title }}</p>
+            </div>
+        </md-toolbar>
+    </header>
     <!-- /Toolbar -->
 
     <!-- View -->
-    <md-content layout="column" layout-align="center center" flex>
-        <div  ui-view="" flex layout-fill style="height: 500px; width: 100%"></div>
-    </md-content>
+    <main flex>
+        <md-content layout="column" layout-align="center center" style="height: 100%">
+            <div ui-view=""></div>
+        </md-content>
+    </main>
     <!-- /View -->
 
-    <!--Angular Libraries-->
-    <script src="/angular/angular.js"></script>
-    <!--<script src="/angular/angular.min.js"></script>-->
-    <script src="/angular-ui-router/release/angular-ui-router.js"></script>
-    <script src="/angular-aria/angular-aria.js"></script>
-    <script src="/angular-animate/angular-animate.js"></script>
-    <script src="/angular-material/angular-material.js"></script>
 
-    <!--Routes and App-->
-    <script src="config/app.module.js"></script>
-    <script src="config/app.routes.js"></script>
-    <script src="config/app.themes.js"></script>
+    <!-- Footer -->
+    <footer layout="row" layout-align="center center" class="footer">
+        Node Starter
+    </footer>
+    <!-- /Footer -->
 
-    <!-- Components -->
-    <script src="components/index/index.controller.js"></script>
-    <script src="components/home/homeController.js"></script>
-    <script src="components/componentsManager/componentsMng.controller.js"></script>
-    <script src="components/componentsManager/components.service.js"></script>
-    <script src="components/component2/component2.controller.js"></script>
-    <script src="components/component2/component2.service.js"></script>
-    <script src="components/component1/component1.controller.js"></script>
-    <script src="components/component1/component1.service.js"></script>
+</div>
+<!--<script src="/angular/angular.min.js"></script>-->
+<script src="/angular-ui-router/release/angular-ui-router.js"></script>
+<script src="/angular-aria/angular-aria.js"></script>
+<script src="/angular-animate/angular-animate.js"></script>
+<script src="/angular-material/angular-material.js"></script>
+
+<!--Routes and App-->
+<script src="config/app.module.js"></script>
+<script src="config/app.routes.js"></script>
+<script src="config/app.themes.js"></script>
+
+<!-- Components -->
+<script src="components/index/index.controller.js"></script>
+<script src="components/home/homeController.js"></script>
+<script src="components/componentsManager/componentsMng.controller.js"></script>
+<script src="components/componentsManager/components.service.js"></script>
+<script src="components/component2/component2.controller.js"></script>
+<script src="components/component2/component2.service.js"></script>
+<script src="components/component1/component1.controller.js"></script>
+<script src="components/component1/component1.service.js"></script>
 
 </body>
 </html>
