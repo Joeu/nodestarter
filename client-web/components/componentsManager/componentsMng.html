@@ -1,22 +1,28 @@
 <div ng-include="'components/shared/sidenav/sidenav.html'"></div>
 <md-content layout="column" style="height: inherit" layout-align="center center">
-    <p ng-bind="cMngCtrl.title"></p>
-
-    <md-button ng-click="cMngCtrl.getItems();">Items from all components</md-button>
 
     <md-content layout="column">
-        <md-list-item ng-repeat="item in cMngCtrl.items.comp1">
-            <p>id: {{ item._id }} |</p>
-            <p> name: {{ item.name }}</p>
-        </md-list-item>
+        <md-list>
+            <md-subheader>Both components' items</md-subheader>
+            <md-list-item ng-repeat="item in cMngCtrl.items.comp1">
+                <!--<p>id: {{ item._id }} |</p>-->
+                <p> name: {{ item.name }} | </p>
+                <i class="material-icons" ng-click="cMngCtrl.doExtraAction($event, item._id)">info_outline</i>
+            </md-list-item>
+            <md-divider></md-divider>
+        </md-list>
+
     </md-content>
 
     <md-content layout="column">
         <md-list-item ng-repeat="item in cMngCtrl.items.comp2">
-            <p>id: {{ item._id }} |</p>
+            <!--<p>id: {{ item._id }} |</p>-->
             <p> name: {{ item.name }}</p>
+            <i class="material-icons" ng-click="cMngCtrl.doExtraAction($event, item._id)">info_outline</i>
         </md-list-item>
+        <md-divider></md-divider>
     </md-content>
 
+    <md-button class="md-raised md-primary" ng-click="cMngCtrl.getItems();">Retrieve Items</md-button>
 
 </md-content>

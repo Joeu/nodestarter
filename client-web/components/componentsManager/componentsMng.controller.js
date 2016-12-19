@@ -4,7 +4,7 @@ angular
     .module('nodestarter')
     .controller('componentMngController', componentMngController);
 
-function componentMngController($scope, componentsService) {
+function componentMngController($scope, componentsService, utilsService) {
     var vm = this;
 
     vm.title = "Components Manager";
@@ -13,6 +13,7 @@ function componentMngController($scope, componentsService) {
     vm.items = [];
 
     vm.getItems = getItems;
+    vm.doExtraAction = doExtraAction;
 
     function getItems() {
         function success(res) {
@@ -25,6 +26,10 @@ function componentMngController($scope, componentsService) {
         }
 
         componentsService.getItems().then(success, error);
+    }
+
+    function doExtraAction(event, id) {
+        utilsService.doExtraAction(event, id);
     }
 
     $scope.actions = [
