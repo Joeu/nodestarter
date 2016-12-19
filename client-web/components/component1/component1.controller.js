@@ -4,7 +4,7 @@ angular
     .module('nodestarter')
     .controller('component1controller', component1controller);
 
-function component1controller($scope, component1service) {
+function component1controller($scope, component1service, utilsService) {
     var vm = this;
 
     vm.title = "Component 1";
@@ -12,6 +12,7 @@ function component1controller($scope, component1service) {
 
     vm.items = [];
     vm.getItems = getItems;
+    vm.doExtraAction = doExtraAction;
 
     function getItems() {
         function success(res) {
@@ -24,6 +25,10 @@ function component1controller($scope, component1service) {
         }
 
         component1service.getItems().then(success, error);
+    }
+
+    function doExtraAction(event, id) {
+        utilsService.doExtraAction(event, id);
     }
 
     $scope.actions = [
