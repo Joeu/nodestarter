@@ -18,6 +18,7 @@
         <md-list-item ng-repeat="item in cMngCtrl.items.comp2">
             <!--<p>id: {{ item._id }} |</p>-->
             <p> name: {{ item.name }} | </p>
+
             <i class="material-icons" ng-click="cMngCtrl.doExtraAction($event, item._id)">info_outline</i>
         </md-list-item>
         <md-divider></md-divider>

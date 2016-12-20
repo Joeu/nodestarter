@@ -1,8 +1,9 @@
 <!-- Sidenav -->
-<md-sidenav class="md-sidenav-left" md-component-id="left" md-disable-backdrop md-whiteframe="4" flex>
+<md-sidenav class="md-sidenav-left" style="background-color: honeydew" md-component-id="left" md-disable-backdrop md-whiteframe="4" flex>
     <md-list>
         <md-list-item ng-repeat="action in actions" layout-align="center start">
-            <md-button ui-sref="{{action.state}}">{{action.name}}</md-button>
+            <button ng-if="action.name.includes('Create')" class="underlined" ui-sref="{{action.state}}">{{action.name}}</button>
+            <button ng-if="!action.name.includes('Create')" class="normal" ui-sref="{{action.state}}">{{action.name}}</button>
         </md-list-item>
     </md-list>
 </md-sidenav>

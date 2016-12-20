@@ -12,6 +12,7 @@ function component1controller($scope, component1service, utilsService) {
 
     vm.items = [];
     vm.getItems = getItems;
+    vm.saveItem = saveItem;
     vm.doExtraAction = doExtraAction;
 
     function getItems() {
@@ -27,11 +28,28 @@ function component1controller($scope, component1service, utilsService) {
         component1service.getItems().then(success, error);
     }
 
+    function saveItem(item) {
+        function success(res) {
+            console.log(res);
+            // vm.items.push(res.data);
+        }
+
+        function error(err) {
+            console.log(err);
+        }
+
+        component1service.saveItem(item).then(success, error);
+    }
+
     function doExtraAction(event, id) {
         utilsService.doExtraAction(event, id);
     }
 
     $scope.actions = [
+        {
+            name: 'Create Item',
+            state: 'comp1.createItem'
+        },
         {
             name: 'Component 2',
             state: 'comp2'
