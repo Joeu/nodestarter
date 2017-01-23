@@ -4,7 +4,7 @@ angular
     .module('nodestarter')
     .controller('component2controller', component2controller);
 
-function component2controller($scope, component2service, utilsService) {
+function component2controller($scope, utilsService) {
     var vm = this;
 
     vm.title = "Component 2";
@@ -12,7 +12,11 @@ function component2controller($scope, component2service, utilsService) {
 
     vm.items = [];
 
+    vm.url = '/component2';
+
     vm.getItems = getItems;
+    vm.saveItem = saveItem;
+    vm.deleteItem = deleteItem;
     vm.doExtraAction = doExtraAction;
 
     function getItems() {
@@ -25,7 +29,32 @@ function component2controller($scope, component2service, utilsService) {
             console.log(err);
         }
 
-        component2service.getItems().then(success, error);
+        utilsService.getItems(vm.url).then(success, error);
+    }
+
+    function saveItem(item) {
+        function success(res) {
+            console.log(res);
+            // vm.items.push(res);
+        }
+
+        function error(err) {
+            console.log(err);
+        }
+
+        utilsService.saveItem(vm.url, item).then(success, error);
+    }
+
+    function deleteItem(id) {
+        function success(res) {
+            vm.items = res.data;
+        }
+
+        function error(err) {
+            console.log(err);
+        }
+
+        utilsService.deleteItem(vm.url, id).then(success, error);
     }
 
     function doExtraAction(event, id) {
@@ -33,6 +62,10 @@ function component2controller($scope, component2service, utilsService) {
     }
 
     $scope.actions = [
+        {
+            name: 'Create Item',
+            state: 'comp2.createItem'
+        },
         {
             name: 'Component 1',
             state: 'comp1'

@@ -5,14 +5,18 @@
         <md-list>
             <md-subheader>Component 2' items</md-subheader>
             <md-list-item ng-repeat="item in c2Ctrl.items">
-                <!--<p>id: {{ item._id }} |</p>-->
                 <p> name: {{ item.name }} | </p>
-                <i class="material-icons" ng-click="c2Ctrl.doExtraAction($event, item._id)">info_outline</i>
+                <i class="material-icons" ng-click="c2Ctrl.doExtraAction($event, item._id)">info_outline | </i>
+                <i class="material-icons" ng-click="c2Ctrl.deleteItem(item._id)">delete_forever</i>
             </md-list-item>
             <md-divider></md-divider>
         </md-list>
     </md-content>
 
     <md-button class="md-raised md-primary" ng-click="c2Ctrl.getItems();">Retrieve Items</md-button>
+
+    <md-content>
+        <ui-view></ui-view>
+    </md-content>
 
 </md-content>

@@ -1,0 +1,13 @@
+<div ng-include="'components/shared/sidenav/sidenav.html'"></div>
+<md-content layout="column" style="height: inherit" layout-align="center center">
+
+    <md-content layout="column">
+        <md-subheader>Create component 2 item</md-subheader>
+        <md-input-container>
+            <input ng-model="item.name" type="text" placeholder="Name" ng-required="true">
+        </md-input-container>
+        <md-button class="md-raised md-primary" ng-click="c2Ctrl.saveItem(item);">Create Item</md-button>
+    </md-content>
+
+
+</md-content>

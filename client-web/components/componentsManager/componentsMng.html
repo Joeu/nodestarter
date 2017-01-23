@@ -1,11 +1,10 @@
 <div ng-include="'components/shared/sidenav/sidenav.html'"></div>
 <md-content layout="column" style="height: inherit" layout-align="center center">
 
+    <md-subheader>Both components' items</md-subheader>
     <md-content layout="column">
         <md-list>
-            <md-subheader>Both components' items</md-subheader>
             <md-list-item ng-repeat="item in cMngCtrl.items.comp1">
-                <!--<p>id: {{ item._id }} |</p>-->
                 <p> name: {{ item.name }} | </p>
                 <i class="material-icons" ng-click="cMngCtrl.doExtraAction($event, item._id)">info_outline</i>
             </md-list-item>
@@ -16,9 +15,7 @@
 
     <md-content layout="column">
         <md-list-item ng-repeat="item in cMngCtrl.items.comp2">
-            <!--<p>id: {{ item._id }} |</p>-->
             <p> name: {{ item.name }} | </p>
-
             <i class="material-icons" ng-click="cMngCtrl.doExtraAction($event, item._id)">info_outline</i>
         </md-list-item>
         <md-divider></md-divider>

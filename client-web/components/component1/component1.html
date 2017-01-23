@@ -5,9 +5,9 @@
         <md-list>
             <md-subheader>Component 1' items</md-subheader>
             <md-list-item ng-repeat="item in c1Ctrl.items">
-                <!--<p>id: {{ item._id }} |</p>-->
                 <p> name: {{ item.name }} | </p>
                 <i class="material-icons" ng-click="c1Ctrl.doExtraAction($event, item._id)">info_outline</i>
+                <i class="material-icons" ng-click="c1Ctrl.deleteItem(item._id)">delete_forever</i>
             </md-list-item>
             <md-divider></md-divider>
         </md-list>

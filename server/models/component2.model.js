@@ -4,7 +4,7 @@ var Promise = require('bluebird');
 Promise.promisifyAll(mongoose);
 
 var Component2Schema = new Schema({
-    field1: String
+    name: String
 });
 
 module.exports = mongoose.model('Component2', Component2Schema);

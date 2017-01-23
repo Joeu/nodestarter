@@ -4,20 +4,23 @@ angular
     .module('nodestarter')
     .controller('component1controller', component1controller);
 
-function component1controller($scope, component1service, utilsService) {
+function component1controller($scope, utilsService) {
     var vm = this;
 
     vm.title = "Component 1";
     $scope.$parent.title = vm.title;
 
     vm.items = [];
+
+    vm.url = '/component1';
+
     vm.getItems = getItems;
     vm.saveItem = saveItem;
+    vm.deleteItem = deleteItem;
     vm.doExtraAction = doExtraAction;
 
     function getItems() {
         function success(res) {
-            console.log(res.data);
             vm.items = res.data;
         }
 
@@ -25,20 +28,31 @@ function component1controller($scope, component1service, utilsService) {
             console.log(err);
         }
 
-        component1service.getItems().then(success, error);
+        utilsService.getItems(vm.url).then(success, error);
     }
 
     function saveItem(item) {
-        function success(res) {
-            console.log(res);
-            // vm.items.push(res.data);
+        function success() {
+            getItems();
         }
 
         function error(err) {
             console.log(err);
         }
 
-        component1service.saveItem(item).then(success, error);
+        utilsService.saveItem(vm.url, item).then(success, error);
+    }
+
+    function deleteItem(id) {
+        function success(res) {
+            vm.items = res.data;
+        }
+
+        function error(err) {
+            console.log(err);
+        }
+
+        utilsService.deleteItem(vm.url, id).then(success, error);
     }
 
     function doExtraAction(event, id) {

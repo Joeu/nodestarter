@@ -34,5 +34,11 @@ angular.module('nodestarter').config(function($stateProvider, $urlRouterProvider
             controller: 'component2controller as c2Ctrl'
         })
 
+        .state('comp2.createItem', {
+            url: '/create',
+            templateUrl: '../components/component2/component2.create.html',
+            controller: 'component1controller as c1Ctrl'
+        })
+
 
 });
